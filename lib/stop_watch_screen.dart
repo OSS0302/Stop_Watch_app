@@ -12,9 +12,25 @@ class StopWatchScreen extends StatefulWidget {
 class _StopWatchScreenState extends State<StopWatchScreen> {
   // 아무것도 없어서 널
   Timer? _timer;
+
   int time = 0;
-  bool isRunning = false;
-  List<String> _lapTimes =[];
+  bool _isRunning = false;
+
+  List<String> _lapTimes = [];
+
+  void _clickButton() {
+    _isRunning = !_isRunning;
+
+    if (_isRunning) {
+      _start();
+    } else {
+      _pause();
+    }
+  }
+
+  void _start() {}
+
+  void _pause() {}
 
   @override
   void dispose() {
@@ -75,8 +91,14 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
               ),
               FloatingActionButton(
                 backgroundColor: Colors.blue,
-                onPressed: () {},
-                child: const Icon(Icons.play_arrow),
+                onPressed: () {
+                  setState(() {
+                    _clickButton();
+                  });
+                },
+                child: _isRunning
+                    ? const Icon(Icons.pause)
+                    : const Icon(Icons.play_arrow),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.green,
