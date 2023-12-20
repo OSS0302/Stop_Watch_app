@@ -38,7 +38,6 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
 
   void _pause() {
     _timer?.cancel();
-
   }
 
   void _reset() {
@@ -48,6 +47,10 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
       _lapTimes.clear();
       _time = 0;
     });
+  }
+
+  void _recordLapTime(String time) {
+    _lapTimes.insert(0, '${_lapTimes.length}등$_time');
   }
 
   @override
@@ -60,7 +63,7 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
   @override
   Widget build(BuildContext context) {
     int sec = _time ~/ 100;
-    String hundredth = '${_time % 100}'.padLeft(2,'0');
+    String hundredth = '${_time % 100}'.padLeft(2, '0');
 
     return Scaffold(
       appBar: AppBar(
@@ -127,7 +130,9 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
               ),
               FloatingActionButton(
                 backgroundColor: Colors.green,
-                onPressed: () {},
+                onPressed: () {
+                  _recordLapTime('$sec.$hundredth')
+                },
                 child: const Icon(Icons.add),
               ),
             ],
