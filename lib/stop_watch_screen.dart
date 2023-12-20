@@ -16,7 +16,22 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
       ),
       body: Column(
         children: [
-          Spacer(),
+          const SizedBox(
+            height: 30,
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                '0',
+                style: TextStyle(fontSize: 50),
+              ), Text(
+                '00',
+              ),
+            ],
+          ),
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -24,18 +39,22 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
                 backgroundColor: Colors.orange,
                 onPressed: () {},
                 child: const Icon(Icons.refresh),
-              ),FloatingActionButton(
+              ),
+              FloatingActionButton(
                 backgroundColor: Colors.blue,
                 onPressed: () {},
                 child: const Icon(Icons.play_arrow),
-              ),FloatingActionButton(
+              ),
+              FloatingActionButton(
                 backgroundColor: Colors.green,
                 onPressed: () {},
                 child: const Icon(Icons.add),
               ),
             ],
           ),
-          SizedBox(height: 30,)
+          const SizedBox(
+            height: 30,
+          ),
         ],
       ),
     );
