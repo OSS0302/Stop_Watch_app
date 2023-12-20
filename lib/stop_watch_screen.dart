@@ -1,13 +1,15 @@
-class StopWatchS extends StatefulWidget {
-  const StopWatchS({super.key});
+import 'package:flutter/material.dart';
+
+class StopWatchScreen extends StatefulWidget {
+  const StopWatchScreen({super.key});
 
   @override
-  State<StopWatchS> createState() => _StopWatchSState();
+  State<StopWatchScreen> createState() => _StopWatchScreenState();
 }
 
-class _StopWatchSState extends State<StopWatchS> {
+class _StopWatchScreenState extends State<StopWatchScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold();
   }
 }
