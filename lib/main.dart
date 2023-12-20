@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:stop_watch/stop_watch_screen.dart';
 
 void main() {
-  Timer.periodic(Duration(seconds: 1), (timer) {
-    print('!!!!');
-  });
+
   runApp(const MyApp());
 }
 
